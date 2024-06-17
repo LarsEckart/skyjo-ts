@@ -15,3 +15,4 @@ OpenAPI documentation for the backend can be found [here](https://play-skyjo-ae5
 ## Just trying out mob.sh
 
 I did it!
+
