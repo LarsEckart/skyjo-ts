@@ -17,3 +17,5 @@ OpenAPI documentation for the backend can be found [here](https://play-skyjo-ae5
 I did it!
 
 Look mom, I'm in a mob!
+
+marti set up
