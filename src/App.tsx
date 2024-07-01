@@ -15,7 +15,7 @@ function App() {
       requestOptions,
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => console.log(data.id));
   };
   return (
     <div className="App">
