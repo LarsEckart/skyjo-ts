@@ -7,8 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header"></header>
 
-      <input type="text" placeholder="New player name" />
-      <button>Add player</button>
+      <textarea placeholder="Add player names separated by comma" />
       <button>Start game</button>
     </div>
   );
