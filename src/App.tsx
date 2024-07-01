@@ -23,25 +23,29 @@ function App() {
       });
   }, []);
 
+  const registerSinglePlayer = async (name: string) => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+      }),
+    };
+    const registerPlayerUrl =
+      "https://play-skyjo-ae5db0018a23.herokuapp.com/api/v1.0/skyjo/games/" +
+      gameId +
+      "/players";
+    fetch(registerPlayerUrl, requestOptions)
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
   const startGame = () => {
     console.log("Game started", players);
     if (gameId) {
-      // TODO get player names
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: "player1",
-        }),
-      };
-      const registerPlayerUrl =
-        "https://play-skyjo-ae5db0018a23.herokuapp.com/api/v1.0/skyjo/games/" +
-        gameId +
-        "/players";
-      fetch(registerPlayerUrl, requestOptions)
-        .then((response) => {
-          console.log(response);
-        });
+      const playerList = players.split(',');
+      playerList.forEach((player) => registerSinglePlayer(player));
     }
   };
 
